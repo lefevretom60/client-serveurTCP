@@ -50,7 +50,7 @@ void QTserver::onClientReadyRead()
         float temperature = Calcule / 100;
 
         // Formatez la réponse
-        QString response = QString("Td%1,%2").arg(sensorNumber, 2, 10, QChar('0')).arg(temperature, 0, 'f', 2);
+        QString response = QString("Capteur : Td%1, detecte %2 Celsius").arg(sensorNumber, 2, 10, QChar('0')).arg(temperature, 0, 'f', 2);
 
         // Envoyez la réponse au client
         socket->write(response.toUtf8());
@@ -73,7 +73,24 @@ void QTserver::onClientReadyRead()
 
         float temperature = calcule2 + 32;
 
-        QString response = QString("Tf%1,%2").arg(sensorNumber, 2, 10, QChar('0')).arg(temperature, 0, 'f', 2);
+        QString response = QString("Capteur :Tf%1, detecte %2 Fahrenheit").arg(sensorNumber, 2, 10, QChar('0')).arg(temperature, 0, 'f', 2);
+
+        // Envoyez la réponse au client
+        socket->write(response.toUtf8());
+    }
+
+    if (request.startsWith("Hr") && request.endsWith("?"))
+    {
+        QString sensorNumberStr = request.mid(2, 2);
+        int sensorNumber = sensorNumberStr.toInt();
+
+        srand(time(NULL));
+
+        int random = rand() % 10000;
+
+        float temperature = random / 100 ;
+
+        QString response = QString("Capteur : Hr%1, detecte %2 % d'hygrometrie").arg(sensorNumber, 2, 10, QChar('0')).arg(temperature, 0, 'f', 2);
 
         // Envoyez la réponse au client
         socket->write(response.toUtf8());
