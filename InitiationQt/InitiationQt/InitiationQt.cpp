@@ -59,7 +59,19 @@ void InitiationQt::onSocketReadyRead(){
 
 	QByteArray data = socket->read(socket->bytesAvailable());
 	QString str(data);
-	ui.MessageEditLine->setText("Donnee recu = " + str);
+
+	int indexVirgule = str.indexOf(',');  // Trouver l'index de la virgule
+
+	QString avantLaVirgule;
+	QString aprèsLaVirgule;
+
+	if (indexVirgule != -1 && indexVirgule < str.length() - 1) {
+		avantLaVirgule = str.left(indexVirgule).trimmed();
+		aprèsLaVirgule = str.mid(indexVirgule + 1).trimmed();
+	}
+
+	ui.MessageEditLine->setText("le capteur est " + avantLaVirgule + " = " + aprèsLaVirgule);
+
 }
 void InitiationQt::onServerNewConnection(){
 	ui.connectionStatusLabel->setText("Un client s'est connecte");
