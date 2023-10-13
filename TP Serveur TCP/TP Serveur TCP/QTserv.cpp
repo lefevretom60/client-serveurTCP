@@ -58,26 +58,22 @@ void QTserver::onClientReadyRead()
 
     if (request.startsWith("Tf") && request.endsWith("?"))
     {
-        // Extrait le numéro du capteur depuis la demande
         QString sensorNumberStr = request.mid(2, 2);
         int sensorNumber = sensorNumberStr.toInt();
 
-        // Ici, vous devriez obtenir la température du capteur correspondant.
-        // Remplacez cela par votre propre logique pour obtenir la température.
-
-        //faire un rand()%55000 apres - 20000 puis diviser par 100
         srand(time(NULL));
 
         int random = rand() % 5500;
 
         int Calcule = random - 2000;
 
-        int Celsius = Calcule / 100;
+        float Celsius = Calcule / 100;
 
-        float temperature = Celsius * 9 / 5 ;
+        float calcule2 = Celsius * 9 / 5 ;
 
-        // Formatez la réponse
-        QString response = QString("Td%1,%2").arg(sensorNumber, 2, 10, QChar('0')).arg(temperature, 0, 'f', 2);
+        float temperature = calcule2 + 32;
+
+        QString response = QString("Tf%1,%2").arg(sensorNumber, 2, 10, QChar('0')).arg(temperature, 0, 'f', 2);
 
         // Envoyez la réponse au client
         socket->write(response.toUtf8());
