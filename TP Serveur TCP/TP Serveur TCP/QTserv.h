@@ -2,6 +2,8 @@
 #include <qtcpsocket.h>
 #include <qtcpserver.h>
 #include <qobject.h>
+#include <QString>
+#include <math.h>
 
 class QTserver : public QObject
 {

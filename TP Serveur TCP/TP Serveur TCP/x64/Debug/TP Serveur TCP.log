@@ -1,5 +1,2 @@
-﻿  moc QTserv.h
-  QTserv.cpp
-  main.cpp
-  moc_QTserv.cpp
+﻿  QTserv.cpp
   TP Serveur TCP.vcxproj -> D:\Cour\TP C\TP Serveur TCP\x64\Debug\TP Serveur TCP.exe

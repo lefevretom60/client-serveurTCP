@@ -25,11 +25,68 @@ void QTserver::onClientDisconnected()
 
 void QTserver::onClientReadyRead()
 {
-    QTcpSocket * obj = qobject_cast<QTcpSocket*>(sender());
+    QTcpSocket * socket = qobject_cast<QTcpSocket*>(sender());
+    QByteArray requestData = socket->readAll();
+
+    // Convert requestData en QString
+    QString request = QString::fromUtf8(requestData);
+
+    if (request.startsWith("Td") && request.endsWith("?"))
+    {
+        // Extrait le numéro du capteur depuis la demande
+        QString sensorNumberStr = request.mid(2, 2);
+        int sensorNumber = sensorNumberStr.toInt();
+
+        // Ici, vous devriez obtenir la température du capteur correspondant.
+        // Remplacez cela par votre propre logique pour obtenir la température.
+
+        //faire un rand()%55000 apres - 20000 puis diviser par 100
+        srand(time(NULL));
+
+        int random = rand() % 5500;
+
+        int Calcule = random - 2000;
+
+        float temperature = Calcule / 100;
+
+        // Formatez la réponse
+        QString response = QString("Td%1,%2").arg(sensorNumber, 2, 10, QChar('0')).arg(temperature, 0, 'f', 2);
+
+        // Envoyez la réponse au client
+        socket->write(response.toUtf8());
+    }
+
+    if (request.startsWith("Tf") && request.endsWith("?"))
+    {
+        // Extrait le numéro du capteur depuis la demande
+        QString sensorNumberStr = request.mid(2, 2);
+        int sensorNumber = sensorNumberStr.toInt();
+
+        // Ici, vous devriez obtenir la température du capteur correspondant.
+        // Remplacez cela par votre propre logique pour obtenir la température.
+
+        //faire un rand()%55000 apres - 20000 puis diviser par 100
+        srand(time(NULL));
+
+        int random = rand() % 5500;
+
+        int Calcule = random - 2000;
+
+        int Celsius = Calcule / 100;
+
+        float temperature = Celsius * 9 / 5 ;
+
+        // Formatez la réponse
+        QString response = QString("Td%1,%2").arg(sensorNumber, 2, 10, QChar('0')).arg(temperature, 0, 'f', 2);
+
+        // Envoyez la réponse au client
+        socket->write(response.toUtf8());
+    }
 }
 
 void QTserver::onServerNewConnection()
 {
+    qDebug() << "client connecter";
     //ui.connectionStatusLabel->setText("Un client s'est connecté");
     QTcpSocket* client = server->nextPendingConnection();
     QObject::connect(client, SIGNAL(readyRead()), this, SLOT(onClientReadyRead()));
