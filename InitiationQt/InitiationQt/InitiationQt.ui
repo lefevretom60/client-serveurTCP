@@ -9,7 +9,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1128</width>
+    <width>754</width>
     <height>400</height>
    </rect>
   </property>
@@ -17,24 +17,11 @@
    <string>InitiationQt</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QLabel" name="label">
-    <property name="geometry">
-     <rect>
-      <x>400</x>
-      <y>230</y>
-      <width>131</width>
-      <height>81</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
    <widget class="QLabel" name="label_3">
     <property name="geometry">
      <rect>
-      <x>306</x>
-      <y>50</y>
+      <x>90</x>
+      <y>40</y>
       <width>41</width>
       <height>20</height>
      </rect>
@@ -46,8 +33,8 @@
    <widget class="QLabel" name="label_4">
     <property name="geometry">
      <rect>
-      <x>280</x>
-      <y>80</y>
+      <x>80</x>
+      <y>70</y>
       <width>71</width>
       <height>20</height>
      </rect>
@@ -59,8 +46,8 @@
    <widget class="QLineEdit" name="IPLineEdit">
     <property name="geometry">
      <rect>
-      <x>350</x>
-      <y>50</y>
+      <x>120</x>
+      <y>38</y>
       <width>113</width>
       <height>20</height>
      </rect>
@@ -69,8 +56,8 @@
    <widget class="QLineEdit" name="portLineEdit">
     <property name="geometry">
      <rect>
-      <x>350</x>
-      <y>80</y>
+      <x>120</x>
+      <y>68</y>
       <width>113</width>
       <height>20</height>
      </rect>
@@ -79,8 +66,8 @@
    <widget class="QPushButton" name="pushButton_2">
     <property name="geometry">
      <rect>
-      <x>370</x>
-      <y>110</y>
+      <x>140</x>
+      <y>98</y>
       <width>75</width>
       <height>23</height>
      </rect>
@@ -92,9 +79,9 @@
    <widget class="QLabel" name="connectionStatusLabel">
     <property name="geometry">
      <rect>
-      <x>580</x>
-      <y>80</y>
-      <width>451</width>
+      <x>240</x>
+      <y>0</y>
+      <width>221</width>
       <height>41</height>
      </rect>
     </property>
@@ -102,26 +89,13 @@
      <string>status de connexion : deconnecte</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_4">
-    <property name="geometry">
-     <rect>
-      <x>370</x>
-      <y>170</y>
-      <width>75</width>
-      <height>23</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Envoyer</string>
-    </property>
-   </widget>
    <widget class="QLabel" name="MessageEditLine">
     <property name="geometry">
      <rect>
-      <x>320</x>
-      <y>210</y>
-      <width>391</width>
-      <height>171</height>
+      <x>460</x>
+      <y>200</y>
+      <width>151</width>
+      <height>101</height>
      </rect>
     </property>
     <property name="text">
@@ -131,8 +105,8 @@
    <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
-      <x>350</x>
-      <y>32</y>
+      <x>120</x>
+      <y>20</y>
       <width>111</width>
       <height>21</height>
      </rect>
@@ -144,11 +118,76 @@
    <widget class="QPlainTextEdit" name="Message">
     <property name="geometry">
      <rect>
-      <x>90</x>
-      <y>240</y>
-      <width>151</width>
-      <height>91</height>
+      <x>490</x>
+      <y>30</y>
+      <width>101</width>
+      <height>51</height>
      </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="BtnC">
+    <property name="geometry">
+     <rect>
+      <x>410</x>
+      <y>100</y>
+      <width>51</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>°C</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="BtnF">
+    <property name="geometry">
+     <rect>
+      <x>530</x>
+      <y>100</y>
+      <width>51</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>°F</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="BtnHr">
+    <property name="geometry">
+     <rect>
+      <x>660</x>
+      <y>100</y>
+      <width>51</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Hr</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_5">
+    <property name="geometry">
+     <rect>
+      <x>490</x>
+      <y>10</y>
+      <width>101</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Saisissez le capteur</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>600</x>
+      <y>20</y>
+      <width>111</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>type de donnee : 01</string>
     </property>
    </widget>
   </widget>
@@ -157,7 +196,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1128</width>
+     <width>754</width>
      <height>21</height>
     </rect>
    </property>
@@ -194,17 +233,49 @@
    </hints>
   </connection>
   <connection>
-   <sender>pushButton_4</sender>
+   <sender>BtnC</sender>
    <signal>clicked()</signal>
    <receiver>InitiationQtClass</receiver>
-   <slot>onSendMessageButtonClicked()</slot>
+   <slot>onSendCelClicked()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>397</x>
-     <y>194</y>
+     <x>435</x>
+     <y>158</y>
     </hint>
     <hint type="destinationlabel">
-     <x>562</x>
+     <x>563</x>
+     <y>199</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>BtnF</sender>
+   <signal>clicked()</signal>
+   <receiver>InitiationQtClass</receiver>
+   <slot>onSendFarClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>555</x>
+     <y>158</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>563</x>
+     <y>199</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>BtnHr</sender>
+   <signal>clicked()</signal>
+   <receiver>InitiationQtClass</receiver>
+   <slot>onSendHygClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>685</x>
+     <y>158</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>563</x>
      <y>199</y>
     </hint>
    </hints>
@@ -215,5 +286,8 @@
   <slot>onConnectButtonClicked()</slot>
   <slot>onSendMessageButtonClicked()</slot>
   <slot>onServerNewConnection()</slot>
+  <slot>onSendCelClicked()</slot>
+  <slot>onSendFarClicked()</slot>
+  <slot>onSendHygClicked()</slot>
  </slots>
 </ui>

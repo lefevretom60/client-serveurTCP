@@ -52,13 +52,14 @@ void InitiationQt::onSendMessageButtonClicked() {
 			socket->write(data);
 			ui.Message->clear();
 		}
+
 	}
 }
 void InitiationQt::onSocketReadyRead(){
 
 	QByteArray data = socket->read(socket->bytesAvailable());
 	QString str(data);
-	ui.MessageEditLine->setText("Message recu = " + str);
+	ui.MessageEditLine->setText("Donnee recu = " + str);
 }
 void InitiationQt::onServerNewConnection(){
 	ui.connectionStatusLabel->setText("Un client s'est connecte");
@@ -80,4 +81,33 @@ void InitiationQt::onClientReadyRead(){
 	obj->write(coucou);
 }
 
-
+void InitiationQt::onSendCelClicked()
+{
+	QString celsuis = "Td";
+	QString interrogation = "?";
+	QString contenu = ui.Message->toPlainText();
+	QByteArray data = celsuis.toUtf8();
+	QByteArray data2 = contenu.toUtf8();
+	QByteArray data3 = interrogation.toUtf8();
+	socket->write(data + data2 + data3);
+}
+void InitiationQt::onSendFarClicked()
+{
+	QString celsuis = "Tf";
+	QString interrogation = "?";
+	QString contenu = ui.Message->toPlainText();
+	QByteArray data = celsuis.toUtf8();
+	QByteArray data2 = contenu.toUtf8();
+	QByteArray data3 = interrogation.toUtf8();
+	socket->write(data + data2+ data3);
+}
+void InitiationQt::onSendHygClicked()
+{
+	QString celsuis = "Hr";
+	QString interrogation = "?";
+	QString contenu = ui.Message->toPlainText();
+	QByteArray data = celsuis.toUtf8();
+	QByteArray data3 = interrogation.toUtf8();
+	QByteArray data2 = contenu.toUtf8();
+	socket->write(data + data2+ data3);
+}
